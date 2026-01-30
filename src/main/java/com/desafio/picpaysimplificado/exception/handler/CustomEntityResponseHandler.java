@@ -1,9 +1,6 @@
 package com.desafio.picpaysimplificado.exception.handler;
 
-import com.desafio.picpaysimplificado.exception.DataNotFound;
-import com.desafio.picpaysimplificado.exception.ExceptionResponse;
-import com.desafio.picpaysimplificado.exception.UserCannotCompleteTransaction;
-import com.desafio.picpaysimplificado.exception.UserWithInsuffiientBalance;
+import com.desafio.picpaysimplificado.exception.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -46,6 +43,26 @@ public class CustomEntityResponseHandler extends ResponseEntityExceptionHandler 
 
     @ExceptionHandler(DataNotFound.class)
     public final ResponseEntity<ExceptionResponse> handlerAllException(DataNotFound ex, WebRequest request) {
+        ExceptionResponse response = new ExceptionResponse(
+                LocalDateTime.now(),
+                ex.getMessage(),
+                request.getDescription(false)
+        );
+        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(TransactionNotAuthorized.class)
+    public final ResponseEntity<ExceptionResponse> handlerAllException(TransactionNotAuthorized ex, WebRequest request) {
+        ExceptionResponse response = new ExceptionResponse(
+                LocalDateTime.now(),
+                ex.getMessage(),
+                request.getDescription(false)
+        );
+        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(NotificationMicroserviceDown.class)
+    public final ResponseEntity<ExceptionResponse> handlerAllException(NotificationMicroserviceDown ex, WebRequest request) {
         ExceptionResponse response = new ExceptionResponse(
                 LocalDateTime.now(),
                 ex.getMessage(),
