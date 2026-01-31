@@ -1,4 +1,4 @@
-package com.desafio.picpaysimplificado.dtos;
+package com.desafio.picpaysimplificado.dtos.user;
 
 import com.desafio.picpaysimplificado.domain.user.User;
 import com.desafio.picpaysimplificado.domain.user.UserType;

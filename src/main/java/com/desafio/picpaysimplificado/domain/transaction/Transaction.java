@@ -1,6 +1,7 @@
 package com.desafio.picpaysimplificado.domain.transaction;
 
 import com.desafio.picpaysimplificado.domain.user.User;
+import com.desafio.picpaysimplificado.dtos.transaction.TransactionResponseDTO;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -31,5 +32,9 @@ public class Transaction {
     private User receiver;
 
     private LocalDateTime timestamp;
+
+    public TransactionResponseDTO toResponse() {
+        return new TransactionResponseDTO(amount, sender.getId(), receiver.getId(), timestamp);
+    }
 
 }

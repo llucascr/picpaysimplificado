@@ -2,15 +2,14 @@ package com.desafio.picpaysimplificado.services;
 
 import com.desafio.picpaysimplificado.domain.user.User;
 import com.desafio.picpaysimplificado.domain.user.UserType;
-import com.desafio.picpaysimplificado.dtos.UserRequestDTO;
-import com.desafio.picpaysimplificado.dtos.UserResponseDTO;
+import com.desafio.picpaysimplificado.dtos.user.UserRequestDTO;
+import com.desafio.picpaysimplificado.dtos.user.UserResponseDTO;
 import com.desafio.picpaysimplificado.exception.DataNotFound;
 import com.desafio.picpaysimplificado.exception.UserCannotCompleteTransaction;
 import com.desafio.picpaysimplificado.exception.UserWithInsuffiientBalance;
 import com.desafio.picpaysimplificado.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 

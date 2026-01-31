@@ -1,8 +1,8 @@
-package com.desafio.picpaysimplificado.dtos;
+package com.desafio.picpaysimplificado.dtos.transaction;
 
 import java.math.BigDecimal;
 
-public record TransactionDTO(
+public record TransactionRequestDTO(
         BigDecimal value,
         Long senderId,
         Long receiverId

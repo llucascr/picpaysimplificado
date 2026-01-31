@@ -1,8 +1,7 @@
 package com.desafio.picpaysimplificado.controllers;
 
-import com.desafio.picpaysimplificado.domain.user.User;
-import com.desafio.picpaysimplificado.dtos.UserRequestDTO;
-import com.desafio.picpaysimplificado.dtos.UserResponseDTO;
+import com.desafio.picpaysimplificado.dtos.user.UserRequestDTO;
+import com.desafio.picpaysimplificado.dtos.user.UserResponseDTO;
 import com.desafio.picpaysimplificado.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
